@@ -11,8 +11,17 @@ const boxes = document.querySelectorAll(".box");
 boxes.forEach(element => {
     //Az eseményfigyelő a click eseményre indul be:
     element.addEventListener("click", (event) => {
-        console.log(element);
-        event.target.style.backgroundColor = "#ff0000";
+        console.log(event);
+        let currentElement = event.target;
+        if(currentElement.style.backgroundColor === ""){
+            currentElement.style.backgroundColor = "#ff0000";
+            currentElement.textContent = currentElement.id;
+        }else{
+            currentElement.style.backgroundColor = "";
+            currentElement.textAlign = "";
+        }
+        //currentElement.target.style.backgroundColor = "#ff0000";
+        currentElement.style.textAlign = "center";
     })
 })
 
